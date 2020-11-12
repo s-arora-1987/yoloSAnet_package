@@ -20,5 +20,5 @@
 *.data
 *.json
 
-scripts/*.zip
+scripts/yolov5_1/*.zip
 
