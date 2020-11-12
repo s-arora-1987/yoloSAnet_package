@@ -1,0 +1,6 @@
+[submodule "yolov5"]
+	path = yolov5
+	url = https://github.com/s-arora-1987/yolov5
+[submodule "scripts/yolov5"]
+	path = scripts/yolov5
+	url = https://github.com/s-arora-1987/yolov5
