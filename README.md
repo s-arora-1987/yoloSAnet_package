@@ -11,7 +11,7 @@
 * [Acknowledgements](#acknowledgements)
 
 ## Motivation
-The goal of this project is to use Yolo-version5 real-time for detecting objects (onions specifically) being sorted by a human trainer. After real-time detection of objects, the [SA-Net](http://thinc.cs.uga.edu/files/sahdICRA20.pdf) developed in thinc Lab is used to estimate the MDP states of domain defined in [PaperME-MTIRL](https://arxiv.org/abs/2004.12873). 
+The goal of this project is to use [Yolo-version5](https://github.com/s-arora-1987/yolov5) real-time for detecting objects (onions specifically) being sorted by a human trainer. After real-time detection of objects, the [SA-Net](http://thinc.cs.uga.edu/files/sahdICRA20.pdf) developed in thinc Lab is used to estimate the MDP states of domain defined in [PaperME-MTIRL](https://arxiv.org/abs/2004.12873). 
 
 ## Libraries Used 
 We use the packages listed in tf3_requirements.txt for running Yolo. For camera setup, we ros package [iai_kinect2](https://github.com/code-iai/iai_kinect2/tree/master/kinect2_bridge) for kinect version 2 
@@ -28,7 +28,7 @@ Read the instructions in calibration section of iai_kinect2 repository. Understa
 ##### Note: running camera node kinect2_bridge as a nodelet gives bod-timeout related issues, which makes kinect_bridge nodelet version crashes a lot. So use: roslaunch kinect2_bridge kinect2_bridge.launch fps_limit:=5 use_nodelet:=false
 
 ## Files
-The file detect_updated.py has the code that receives images from camera node, passes them thorugh Yolo, and publishes output on a ros topic. 
+[Yolo-version5](https://github.com/s-arora-1987/yolov5) is a sub-module of this ros package repository. The file detect_updated.py in [Yolo-version5](https://github.com/s-arora-1987/yolov5) has the code that receives images from camera node, passes them thorugh Yolo, and publishes output on a ros topic. 
 
 For running object recognition, run camera node. Then use following command in separate terminal: 
 rosrun yoloSAnet_package detect_updated.py
@@ -36,6 +36,16 @@ rosrun yoloSAnet_package detect_updated.py
 (optional) checking camera view during execution:
 rosrun image_view image_view image:=/kinect2/hd/image_color
 
-See the folder scripts/yolo/inference/output for checking saved images with bounding boxes.
+(optional) You can verify the detection the folder scripts/yolo/inference/output for checking saved images with bounding boxes.
 
+## Summary of Results
+The detected objects and states are shown in gifs in the main repository [IRL_projects](https://github.com/s-arora-1987/sawyer_i2rl_project_workspace) for this project.
 
+### Next step
+Intergrate the SA-Net PyTroch version in sciprts/sanet.ipynb in this ros package. 
+
+## Contact
+email: sa08751@uga.edu
+
+## Acknowledgements
+- [lab-mates](http://thinc.cs.uga.edu/#person) 
